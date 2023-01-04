@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="report_car_xlsx" model="ir.actions.report">
+        <field name="name">Car report XLSX</field>
+        <field name="model">cars.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">car_module.report_car_xlsx</field>
+        <field name="report_file">report_car</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -14,7 +14,10 @@
     'website': "",
     'category': 'Car Management',
     'version': '0.1',
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'report_xlsx',
+    ],
 
     # always loaded
     'data': [
@@ -22,6 +25,8 @@
         'security/security_groups.xml',
         'security/security_rules.xml',
         'security/ir.model.access.csv',
+        'report/car_report_views.xml',
+        'wizard/cars_wizard_views.xml',
         'views/templates.xml',
         'views/car_car_views.xml',
         'views/parking_views.xml',

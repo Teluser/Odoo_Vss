@@ -3,4 +3,5 @@
     <menuitem id="car_root_menu" name="Cars"/>
     <menuitem id="car_menus" name="Cars" parent="car_root_menu" action="action_car_car"/>
     <menuitem id="parking_menus" name="Parking" parent="car_root_menu" action="parking_parking_action"/>
+    <menuitem id="car_report_menu" name="Car report" parent="car_root_menu" action="cars_wizard_action"/>
 </odoo>

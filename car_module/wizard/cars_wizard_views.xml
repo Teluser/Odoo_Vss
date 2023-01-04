@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="cars_wizard_form" model="ir.ui.view">
+        <field name="name">cars.wizard.form</field>
+        <field name="model">cars.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="max_horse_power"/>
+                    </group>
+                    <button name="get_car_report" string="Report" type="object"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="cars_wizard_action" model="ir.actions.act_window">
+        <field name="name">cars.wizard.action</field>
+        <field name="res_model">cars.wizard</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

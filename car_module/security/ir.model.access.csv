@@ -4,4 +4,7 @@ access_car_feature,access_car_module.car_feature,model_car_feature,base.group_us
 access_car_car_user,user_access_car_module.car_car,model_car_car,car_module.group_car_user,1,0,0,0
 access_car_car_manager,manager_access_car_module.car_car,model_car_car,car_module.group_car_manager,1,1,1,0
 access_car_car_super_manager,super_manager_access_car_module.car_car,model_car_car,car_module.group_car_super_manager,1,1,1,1
+access_report_car_module_report_car_xlsx,access_report_car_module_report_car_xlsx,model_report_car_module_report_car_xlsx,base.group_user,1,1,1,1
+access_cars_wizard,access_cars_wizard,model_cars_wizard,base.group_user,1,1,1,1
+
 
