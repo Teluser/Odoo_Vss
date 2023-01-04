@@ -18,6 +18,7 @@
 
     # always loaded
     'data': [
+        # 'data/car_sequence.xml',
         'security/security_groups.xml',
         'security/security_rules.xml',
         'security/ir.model.access.csv',

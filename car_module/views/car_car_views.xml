@@ -18,6 +18,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                        <strong>
+                            <h1>
+                                <field  name="car_sequence"/>
+                            </h1>
+                        </strong>
                         <group>
                             <field name="name"/>
                             <field name="status"/>
