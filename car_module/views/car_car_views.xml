@@ -47,9 +47,25 @@
             </form>
         </field>
     </record>
+    <record id="car_car_search" model="ir.ui.view">
+        <field name="name">car.car.search</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="My Car" name="filter_my_car" domain="[('create_uid', '=', uid)]"/>
+                <filter string="Had Driver" name="filter_had_driver" domain="[('driver_id', '!=', False)]"/>
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Status" name="group_by_status" context="{'group_by':'status'}"/>
+                    <filter string="Driver" name="group_by_driver" context="{'group_by':'driver_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
     <record id="action_car_car" model="ir.actions.act_window">
         <field name="name">action.car.car</field>
         <field name="res_model">car.car</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_had_driver':True}</field>
     </record>
 </odoo>
