@@ -22,6 +22,7 @@
         'security/security_groups.xml',
         'security/security_rules.xml',
         'security/ir.model.access.csv',
+        'views/templates.xml',
         'views/car_car_views.xml',
         'views/parking_views.xml',
         'views/menus.xml',

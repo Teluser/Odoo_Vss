@@ -1,10 +1,15 @@
-# -*- coding: utf-8 -*-
 from odoo import http
+from odoo.http import request
 
-# class CarModule(http.Controller):
-#     @http.route('/car_module/car_module/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class CarModule(http.Controller):
+    @http.route('/car_module/cars/', auth='public')
+    def get_three_cars_with_biggest_horse_power(self, **kw):
+        car_ids = request.env['car.car'].search([])
+        car_horse_power = car_ids.mapped('horse_power')
+        car_horse_power.sort()
+        max_horse_power = car_horse_power[-3:]
+        car_max_horse_power_ids = request.env['car.car'].search([('horse_power', 'in', max_horse_power)])
+        return request.render("car_module.car_web_template", {'car_ids': car_max_horse_power_ids})
 
 #     @http.route('/car_module/car_module/objects/', auth='public')
 #     def list(self, **kw):
