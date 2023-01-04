@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="car_user_rule" model="ir.rule">
+        <field name="name">car.user.rule</field>
+        <field name="model_id" ref="model_car_car" />
+        <field name="groups" eval="[(4,ref('car_module.group_car_user'))]"/>
+        <field name="domain_force">[('horse_power','!=',4)]</field>
+    </record>
+    <record id="car_manager_rule" model="ir.rule">
+        <field name="name">car.user.rule</field>
+        <field name="model_id" ref="model_car_car" />
+        <field name="groups" eval="[(4,ref('car_module.group_car_manager'))]"/>
+        <field name="domain_force">[]</field>
+    </record>
+</odoo>

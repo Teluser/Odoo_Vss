@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="car_root_menu" name="Cars"/>
+    <menuitem id="car_menus" name="Cars" parent="car_root_menu" action="action_car_car"/>
+    <menuitem id="parking_menus" name="Parking" parent="car_root_menu" action="parking_parking_action"/>
+</odoo>

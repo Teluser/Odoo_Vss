@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="car_car_tree" model="ir.ui.view">
+        <field name="name">car.car.tree</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="horse_power"/>
+                <field name="door_number"/>
+                <field name="driver_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="car_car_form" model="ir.ui.view">
+        <field name="name">car.car.form</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="status"/>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <field name="horse_power" attrs="{'readonly':[('door_number','=',4)],'required':[('name','=','abc')]}"/>
+                                    <field name="door_number"/>
+                                    <field name="feature_ids" widget="many2many_tags"/>
+                                    <field name="total_speed"/>
+                                </group>
+                            </page>
+                            <page string="Other info">
+                                <group>
+                                    <field name="driver_id"/>
+                                    <field name="parking_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_car_car" model="ir.actions.act_window">
+        <field name="name">action.car.car</field>
+        <field name="res_model">car.car</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
