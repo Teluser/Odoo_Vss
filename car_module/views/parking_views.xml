@@ -19,6 +19,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="parking_price"/>
                     </group>
                     <notebook>
                         <page string="Cars">

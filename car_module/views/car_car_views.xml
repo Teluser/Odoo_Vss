@@ -26,6 +26,7 @@
                         <group>
                             <field name="name"/>
                             <field name="status"/>
+                            <field name="car_price"/>
                         </group>
                         <notebook>
                             <page string="Details">
@@ -62,10 +63,68 @@
             </search>
         </field>
     </record>
+    <record id="car_car_kanban" model="ir.ui.view">
+        <field name="name">car.car.kanban</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status">
+                <field name="name"/>
+                <field name="horse_power"/>
+                <field name="image"/>
+                <field name="status"/>
+                <templates>
+                    <t t-name="kanban-box">
+                         <div class="oe_kanban_global_click">
+                             <div class="o_kanban_image">
+                                 <img alt="Car Image" t-att-src="kanban_image('car.car', 'image_medium',record.image)"/>
+                             </div>
+                             <div class="oe_kanban_details">
+                                 <strong>
+                                     <field name="name"/>
+                                 </strong>
+                                 <br/>
+                                 <span>
+                                     <strong>Status: </strong>
+                                     <field name="status"/>
+                                 </span>
+                                 <br/>
+                                 <span>
+                                     <strong>Horse power: </strong>
+                                     <field name="horse_power"/>
+                                 </span>
+                             </div>
+                         </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="car_car_pivot" model="ir.ui.view">
+        <field name="name">car.car.pivot</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="status" type="row"/>
+                <field name="name" type="row"/>
+                <field name="parking_id" type="col"/>
+                <field name="car_price" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="car_car_graph" model="ir.ui.view">
+        <field name="name">car.car.graph</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="name"/>
+                <field name="total_price" type="measure"/>
+            </graph>
+        </field>
+    </record>
     <record id="action_car_car" model="ir.actions.act_window">
         <field name="name">action.car.car</field>
         <field name="res_model">car.car</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban,pivot,graph</field>
         <field name="context">{'search_default_filter_had_driver':True}</field>
     </record>
 </odoo>

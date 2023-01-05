@@ -17,6 +17,7 @@
     'depends': [
         'base',
         'report_xlsx',
+        'hr',
     ],
 
     # always loaded
@@ -31,5 +32,6 @@
         'views/car_car_views.xml',
         'views/parking_views.xml',
         'views/menus.xml',
+        'views/hr_employee_views.xml',
     ],
 }

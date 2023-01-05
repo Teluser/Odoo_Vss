@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 
+
 class CarCar(models.Model):
     _name = 'car.car'
     name = fields.Char("Name")
@@ -12,6 +13,16 @@ class CarCar(models.Model):
     status = fields.Selection(string="Status", selection=[('new', 'New'), ('used', 'Used'), ('sold', 'Sold')],
                               default='new')
     car_sequence = fields.Char(string="Sequence", readonly=True, required=True, copy=False, default='New')
+    image = fields.Binary(string="Car Image")
+    car_price = fields.Float(string="Price")
+    parking_price = fields.Float(related="parking_id.parking_price")
+    total_price = fields.Float("Total Price", compute="_compute_total_price", store=True)
+
+    @api.depends('car_price', 'parking_price')
+    def _compute_total_price(self):
+        for r in self:
+            r.total_price = r.car_price + r.parking_price
+        return
 
     @api.model
     def create(self, vals):
